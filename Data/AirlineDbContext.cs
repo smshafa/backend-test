@@ -5,7 +5,6 @@ namespace backend_test.Data
 {
     public class AirlineDbContext : DbContext, IDbContext
     {
-
         public AirlineDbContext(DbContextOptions<AirlineDbContext> options) : base(options)
         {
 
@@ -13,8 +12,6 @@ namespace backend_test.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server=.;Database=AirlineDB;User Id=sa;Password=123456;TrustServerCertificate=true;");
         }
 
         public DbSet<Route> Routes { get; set; }
