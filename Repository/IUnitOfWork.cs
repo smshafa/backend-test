@@ -7,7 +7,7 @@ namespace backend_test.Repository
         IRouteRepository Routes { get; }
         IFlightRepository Flights { get; }
         ISubscriptionRepository Subscriptions { get; }
-        // public IDbContext dbContext { get; } //added for unit test
+
         int Complete();
     }
 }

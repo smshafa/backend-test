@@ -6,12 +6,9 @@ namespace backend_test.Repository
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IDbContext _context;
-        // public IDbContext IDbContext { get; } //added for unit test
         public IRouteRepository Routes { get; set; }
         public IFlightRepository Flights { get; set; }
         public ISubscriptionRepository Subscriptions { get; set; }
-
-        // public UnitOfWork(){}
 
         // public UnitOfWork(IDbContext dbContext)
         // {
