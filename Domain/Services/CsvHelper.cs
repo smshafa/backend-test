@@ -30,9 +30,9 @@ public class CsvHelper<T> : IWriter<T>
         }
     }
 
-    public void WriteToFile(List<T> list, string filePath)
+    public void WriteToFile(List<T> list, string filePath, string fileName)
     {
-        using (StreamWriter sw = new StreamWriter(filePath))
+        using (StreamWriter sw = new StreamWriter(filePath + "\\"+ fileName + ".csv"))
         {
             CreateHeader(list, sw);
             CreateRows(list, sw);

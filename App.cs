@@ -25,7 +25,7 @@ public class App
         // var agencyId = Int32.Parse(Console.ReadLine());
         DateOnly startDate = DateOnly.ParseExact("2016-11-16", "yyyy-MM-dd", null);
         DateOnly endDate = DateOnly.ParseExact("2016-11-18", "yyyy-MM-dd", null);
-        var agencyId = 1;
+        var agencyId = 7;
         _detectionFlight.DetectFlight(startDate, endDate, agencyId);
     }
 }

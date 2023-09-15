@@ -2,5 +2,5 @@
 
 public interface IWriter<T>
 {
-    void WriteToFile(List<T> list, string filePath);
+    void WriteToFile(List<T> list, string filePath, string fileName);
 }
