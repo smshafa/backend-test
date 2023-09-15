@@ -24,7 +24,7 @@ catch (Exception e)
 
 IHostBuilder CreateHostBuilder(string[] strings)
 {
-    string connectionstring = @"Server=.;Database=AirlineDB;User Id=sa;Password=Sa@123456;TrustServerCertificate=true;";
+    string connectionstring = @"Server=.;Database=AirlineDB;User Id=sa;Password=123456;TrustServerCertificate=true;";
     return Host.CreateDefaultBuilder()
         .ConfigureServices((_, services) =>
         {

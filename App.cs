@@ -16,14 +16,16 @@ public class App
     
     public void Run(string[] args)
     {
-        Console.WriteLine("Please input values:");
-        Console.WriteLine("start date (in yyyy-mm-dd format):");
-        DateOnly startDate = DateOnly.ParseExact(Console.ReadLine(), "yyyy-MM-dd", null);
-        Console.WriteLine("end date (in yyyy-mm-dd format):");
-        DateOnly endDate = DateOnly.ParseExact(Console.ReadLine(), "yyyy-MM-dd", null);
-        Console.WriteLine("agency id:");
-        var agencyId = Int32.Parse(Console.ReadLine());
-        
+        // Console.WriteLine("Please input values:");
+        // Console.WriteLine("start date (in yyyy-mm-dd format):");
+        // DateOnly startDate = DateOnly.ParseExact(Console.ReadLine(), "yyyy-MM-dd", null);
+        // Console.WriteLine("end date (in yyyy-mm-dd format):");
+        // DateOnly endDate = DateOnly.ParseExact(Console.ReadLine(), "yyyy-MM-dd", null);
+        // Console.WriteLine("agency id:");
+        // var agencyId = Int32.Parse(Console.ReadLine());
+        DateOnly startDate = DateOnly.ParseExact("2016-11-16", "yyyy-MM-dd", null);
+        DateOnly endDate = DateOnly.ParseExact("2016-11-18", "yyyy-MM-dd", null);
+        var agencyId = 1;
         _detectionFlight.DetectFlight(startDate, endDate, agencyId);
     }
 }
