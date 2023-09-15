@@ -67,5 +67,10 @@ public class ChangeDetectorSearchStrategy : ChangeDetectorStrategy
         var end = DateTime.Now;
         var elapsed = end - start;
         Console.WriteLine("Elapsed time: {0}, count: {1}", elapsed, resultSetTwo.Count());
+
+        Console.WriteLine("Creating CSV file...");
+        IWriter<ResultDto> csvWriter = new CsvHelper<ResultDto>();
+        csvWriter.WriteToFile(resultSetTwo, Environment.CurrentDirectory, "result");
+        Console.WriteLine("CSV file is created!");
     }
 }

@@ -51,7 +51,7 @@ public class ChangeDetectorGroupStrategy : ChangeDetectorStrategy
             };
         
 
-        var desiredFlightSetOne = from r in flightsWithExtra.ToList()
+        var desiredFlightSetOne = from r in flightsWithExtra
             let isNew = resultsGroup.Any(g =>
                 // (r.DepartureTime >= startDateAsDateTime && r.DepartureTime <= endDateAsDateTime) &&
                 r.AirlineId == g.AirlineId &&
@@ -76,11 +76,14 @@ public class ChangeDetectorGroupStrategy : ChangeDetectorStrategy
 
         var resultSetOne = desiredFlightSetOne
             .Where(r => r.DepartureTime >= startDateAsDateTime && r.DepartureTime <= endDateAsDateTime).ToList();
-        IWriter<ResultDto> csvWriter = new CsvHelper<ResultDto>();
-        csvWriter.WriteToFile(resultSetOne, Environment.CurrentDirectory, "result");
-
+        
         DateTime end = DateTime.Now;
         TimeSpan elapsed = end - start;
         Console.WriteLine("Elapsed time: {0}, count: {1}", elapsed, resultSetOne.Count());
+        
+        Console.WriteLine("Creating CSV file...");
+        IWriter<ResultDto> csvWriter = new CsvHelper<ResultDto>();
+        csvWriter.WriteToFile(resultSetOne, Environment.CurrentDirectory, "result");
+        Console.WriteLine("CSV file is created!");
     }
 }
