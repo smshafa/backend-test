@@ -36,7 +36,7 @@ public class ChangeDetectorSearchStrategy : ChangeDetectorStrategy
                 r.DestinationCityId
             };
         
-        // Method 2
+        // TODO: try to Use DbFunction to avoid using ToList
         var desiredFlightSetTwo = from currentFlight in flightsWithExtra.ToList()
             let isNew = !flightsWithExtra.Any(g =>
                 (currentFlight.DepartureTime >= startDate.ToDateTime(new TimeOnly(0, 0, 0)) &&

@@ -7,7 +7,8 @@ namespace backend_test.Data
     {
         public AirlineDbContext(DbContextOptions<AirlineDbContext> options) : base(options)
         {
-
+            Database.Migrate();
+            // Or Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

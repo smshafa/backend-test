@@ -37,10 +37,6 @@ public class ChangeDetectorGroupStrategy : ChangeDetectorStrategy
                 r.DestinationCityId
             };
         
-        //---------
-        
-        
-        // Method 1
         var resultsGroup = from f in flightsWithExtra
             group f by new {f.RouteId, f.AirlineId}
             into g

@@ -67,6 +67,16 @@ namespace backend_test.Data.Migrations
                 name: "IX_Flights_RouteId",
                 table: "Flights",
                 column: "RouteId");
+            
+            migrationBuilder.CreateIndex(
+                name: "IX_AirlineId",
+                table: "Flights",
+                column: "AirlineId");
+            
+            migrationBuilder.CreateIndex(
+                name: "IX_DepartureTime",
+                table: "Flights",
+                column: "DepartureTime");
         }
 
         /// <inheritdoc />
