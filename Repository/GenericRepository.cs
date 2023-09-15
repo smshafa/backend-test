@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend_test.Repository
 {
-    //https://github.com/PradeepLoganathan/Repository-UOW-Sample/tree/510b987c87739982b763154a13ace527c39597c9/BookStore/BookStore.Repository
     public abstract class GenericRepository<T, Y> : IGenericRepository<T, Y> where T : class
     {
         protected readonly AirlineDbContext _context;

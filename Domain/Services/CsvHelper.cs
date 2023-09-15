@@ -11,6 +11,7 @@ public class CsvHelper<T> : IWriter<T>
         {
             sw.Write(properties[i].Name + ",");
         }
+
         var lastProp = properties[properties.Length - 1].Name;
         sw.Write(lastProp + sw.NewLine);
     }
@@ -25,6 +26,7 @@ public class CsvHelper<T> : IWriter<T>
                 var prop = properties[i];
                 sw.Write(prop.GetValue(item) + ",");
             }
+
             var lastProp = properties[properties.Length - 1];
             sw.Write(lastProp.GetValue(item) + sw.NewLine);
         }
@@ -32,7 +34,7 @@ public class CsvHelper<T> : IWriter<T>
 
     public void WriteToFile(List<T> list, string filePath, string fileName)
     {
-        using (StreamWriter sw = new StreamWriter(filePath + "\\"+ fileName + ".csv"))
+        using (StreamWriter sw = new StreamWriter(filePath + "\\" + fileName + ".csv"))
         {
             CreateHeader(list, sw);
             CreateRows(list, sw);

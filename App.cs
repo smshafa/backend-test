@@ -7,13 +7,13 @@ public class App
 {
     private readonly IConfiguration _configuration;
     private readonly IDetectionFlight _detectionFlight;
-    
+
     public App(IDetectionFlight detectionFlight, IConfiguration configuration)
     {
         _detectionFlight = detectionFlight;
         _configuration = configuration;
     }
-    
+
     public void Run(string[] args)
     {
         // Console.WriteLine("Please input values:");

@@ -25,9 +25,7 @@ namespace backend_test.Data
                 .HasMany<Flight>(g => g.Flights)
                 .WithOne(s => s.route)
                 .HasForeignKey(s => s.RouteId);
-
-            // modelBuilder.Entity<Route>().ToTable("Route");
-            // modelBuilder.Entity<Flight>().ToTable("Flight");
+            
             modelBuilder.Entity<Subscription>().ToTable("Subscription");
 
 

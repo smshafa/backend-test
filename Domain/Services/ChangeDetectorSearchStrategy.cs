@@ -6,19 +6,19 @@ namespace backend_test.Domain.Services;
 public class ChangeDetectorSearchStrategy : ChangeDetectorStrategy
 {
     private readonly IUnitOfWork _unitOfWork;
-    
+
     public ChangeDetectorSearchStrategy(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
-    
+
     public override void Calculate(DateOnly startDate, DateOnly endDate, int agencyId)
     {
         DateTime start = DateTime.Now;
         var startDateAsDateTime = startDate.ToDateTime(new TimeOnly(0, 0, 0));
         var endDateAsDateTime = endDate.ToDateTime(new TimeOnly(0, 0, 0));
         var agencyLimitation = _unitOfWork.Subscriptions.All.Where(x => x.AgencyId == agencyId);
-        
+
         DateTime decreasedStartDateTime = startDate.ToDateTime(new TimeOnly(0, 0, 0)).AddDays(-7).AddMinutes(-30);
         DateTime extraEndDateTime = endDate.ToDateTime(new TimeOnly(0, 0, 0)).AddDays(7).AddMinutes(30);
 
@@ -35,7 +35,7 @@ public class ChangeDetectorSearchStrategy : ChangeDetectorStrategy
                 f.Id, f.AirlineId, f.RouteId, f.DepartureTime, f.ArrivalTime, r.DepartureDate, r.OriginCityId,
                 r.DestinationCityId
             };
-        
+
         // TODO: try to Use DbFunction to avoid using ToList
         var desiredFlightSetTwo = from currentFlight in flightsWithExtra.ToList()
             let isNew = !flightsWithExtra.Any(g =>

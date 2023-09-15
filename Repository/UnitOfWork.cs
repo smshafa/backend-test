@@ -10,11 +10,6 @@ namespace backend_test.Repository
         public IFlightRepository Flights { get; set; }
         public ISubscriptionRepository Subscriptions { get; set; }
 
-        // public UnitOfWork(IDbContext dbContext)
-        // {
-        //     this._context = dbContext;
-        // }
-
         public UnitOfWork(IDbContext dbContext, IRouteRepository routeRepository, IFlightRepository flightRepository,
             ISubscriptionRepository subscriptionRepository)
         {

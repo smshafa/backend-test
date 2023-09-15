@@ -36,7 +36,6 @@ IHostBuilder CreateHostBuilder(string[] strings)
             services.AddSingleton<IRouteRepository, RouteRepository>();
             services.AddSingleton<IFlightRepository, FlightRepository>();
             services.AddSingleton<ISubscriptionRepository, SubscriptionRepository>();
-
         });
     // .ConfigureAppConfiguration(app => { app.AddJsonFile("appsettings.json"); });
 }
