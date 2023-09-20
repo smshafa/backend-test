@@ -67,11 +67,3 @@ The data set intentionally omits city, airline and agency tables, because theyâ€
    - status (New / Discontinued)
 
 5. Display execution metrics (i.e. time taken to execute the change detection algorithm).
-
-# Elaborate
-
-- Database design (data types, keys, indexes)
-- Overall structure of the application (layers, data flow, dependencies, (de)coupling) - Data access layer implementation
-- Change detection algorithm implementation
-- Data structures used
-- Optimizations applied
